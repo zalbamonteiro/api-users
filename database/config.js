@@ -49,7 +49,7 @@ const insert = async (collection ,newObject) => {
 const update = async (collection, selectObject ,newObject) => {
   try {
     await client.connect();
-    return await client.db(dbName).collection(collection).updateOne(selectObject, newObject);
+    return await client.db(dbName).collection(collection).updateOne(selectObject, {$set: newObject});
   }
   catch(erro){
     console.log('====> ', erro)
@@ -63,7 +63,7 @@ const update = async (collection, selectObject ,newObject) => {
 const remove = async (collection, selectObject) => {
   try {
     await client.connect();
-    return await client.db(dbName).collection(collection).delete(selectObject);
+    return await client.db(dbName).collection(collection).deleteOne(selectObject);
   }
   catch(erro){
     console.log('====> ', erro)

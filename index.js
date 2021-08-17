@@ -22,13 +22,13 @@ app.post('/', async (request, response) =>{
 
 app.put('/:id', async (request, response) => {
   const objectId = mongodb.ObjectId(request.params.id);
-  let result = await updateUser(request.body);
+  let result = await updateUser(request.body, {_id : objectId});
   response.json(result);
 })
 
 app.delete('/:id', async (request, response) => {
   const objectId = mongodb.ObjectId(request.params.id);
-  let result = await run(deleteUser,null, {_id : objectId});
+  let result = await deleteUser({_id : objectId});
   response.json(result);
 })
 

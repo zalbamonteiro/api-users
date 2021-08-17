@@ -9,11 +9,11 @@ const insetUser = async (user) => {
 }
 
 const updateUser = async (user, query) => {
-  return await update(query, user)
+  return await update('users', query, user)
 }
 
 const deleteUser = async (query) => {
-  return await remove(query)
+  return await remove('users', query)
 }
 
 
