@@ -4,13 +4,14 @@ function sayHello () {
       resolve(console.log("Hello!"))
     },300)
   })
-  
 }
 
 
-async function executeHellow(){
+async function executeHello(){
  await sayHello();
  console.log("Final do código")
+ 
+ //vai o resto de aplicação
 }
 
-executeHellow()
+executeHello()

@@ -21,7 +21,7 @@ const getAll = async (collection) => {
 const getBy = async (collection, selectObject) => {
   try {
     await client.connect();
-    return await client.db(dbName).collection(collection).findOne({selectObject}).toArray();
+    return await client.db(dbName).collection(collection).findOne(selectObject);
   }
   catch(erro){
     console.log('====> ', erro)
