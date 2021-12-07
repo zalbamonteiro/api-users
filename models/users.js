@@ -1,7 +1,13 @@
-const { insert, getAll, update, remove } = require("../database/config");
+const mongodb = require("mongodb");
+const { insert, getAll, getBy, update, remove } = require("../database/config");
 
 async function getUsers() {
   return await getAll("users");
+}
+
+async function getUsersById(userId) {
+  const objectId = mongodb.ObjectId(userId);
+  return await getBy("users", { _id: objectId });
 }
 
 const insetUser = async (user) => {
@@ -16,4 +22,4 @@ const deleteUser = async (query) => {
   return await remove("users", query);
 };
 
-module.exports = { getUsers, insetUser, updateUser, deleteUser };
+module.exports = { getUsers, getUsersById, insetUser, updateUser, deleteUser };

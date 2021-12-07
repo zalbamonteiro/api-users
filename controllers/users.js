@@ -1,6 +1,7 @@
 const mongodb = require("mongodb");
 const {
   getUsers,
+  getUsersById,
   insetUser,
   updateUser,
   deleteUser,
@@ -11,6 +12,12 @@ module.exports = (app) => {
     let result = await getUsers();
     response.json(result);
   });
+
+  app.get("/:id", async (request, response) => {
+    let result = await getUsersById(request.params.id);
+    response.json(result);
+  });
+  
 
   app.post("/", async (request, response) => {
     let result = await insetUser(request.body);
