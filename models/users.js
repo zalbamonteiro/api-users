@@ -5,10 +5,10 @@ async function getUsers() {
   return await getAll("users");
 }
 
-async function getUsersById(userId) {
+/* async function getUsersById(userId) {
   const objectId = mongodb.ObjectId(userId);
   return await getBy("users", { _id: objectId });
-}
+} */
 
 const insetUser = async (user) => {
   return await insert("users", user);

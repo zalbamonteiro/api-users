@@ -13,10 +13,10 @@ module.exports = (app) => {
     response.json(result);
   });
 
-  app.get("/:id", async (request, response) => {
+ /*  app.get("/:id", async (request, response) => {
     let result = await getUsersById(request.params.id);
     response.json(result);
-  });
+  }); */
   
 
   app.post("/", async (request, response) => {
