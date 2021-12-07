@@ -22,4 +22,4 @@ const deleteUser = async (query) => {
   return await remove("users", query);
 };
 
-module.exports = { getUsers, getUsersById, insetUser, updateUser, deleteUser };
+module.exports = { getUsers, insetUser, updateUser, deleteUser };
