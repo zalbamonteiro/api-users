@@ -6,6 +6,7 @@ const dbName = "api-users";
 
 const getAll = async (collection) => {
   try {
+    console.log("Conexão aberta")
     await client.connect();
     return await client.db(dbName).collection(collection).find({}).toArray();
   }

@@ -5,10 +5,9 @@ async function getUsers() {
   return await getAll("users");
 }
 
-/* async function getUsersById(userId) {
-  const objectId = mongodb.ObjectId(userId);
-  return await getBy("users", { _id: objectId });
-} */
+async function getUsersById(userId) {
+  return await getBy("users", userId);
+}
 
 const insetUser = async (user) => {
   return await insert("users", user);
@@ -22,4 +21,4 @@ const deleteUser = async (query) => {
   return await remove("users", query);
 };
 
-module.exports = { getUsers, insetUser, updateUser, deleteUser };
+module.exports = { getUsers, getUsersById, insetUser, updateUser, deleteUser };
