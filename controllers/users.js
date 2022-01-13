@@ -13,7 +13,7 @@ module.exports = (app) => {
     response.json(result);
   });
 
- app.get("/:id", async (request, response) => {
+ app.get("/user/:id", async (request, response) => {
     const objectId = mongodb.ObjectId(request.params.id);
     let result = await getUsersById({ _id: objectId });
     response.json(result);
